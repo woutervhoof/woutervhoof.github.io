@@ -1,1 +1,0 @@
-{"changed":false,"filter":false,"title":"fsmail - Idle","tooltip":"fsmail - Idle","value":"","undoManager":{"mark":-1,"position":-1,"stack":[]},"output":{"id":"output578130","width":758,"height":236,"scrollTop":40,"config":{"command":"./fsmail $PORT","debug":true,"default":true,"env":{},"name":"fsmail","runner":"Shell command"}},"timestamp":1446973541349}
