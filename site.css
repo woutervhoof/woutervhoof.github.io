@@ -274,7 +274,7 @@ p4 {
     background-size: contain;
     background-repeat: no-repeat;
     /*background-size: 100%;*/
-    width: auto;
+    /*width: auto;*/
     height: 100%;
     top: 10px;
     /*position: relative;*/
