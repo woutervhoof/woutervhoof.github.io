@@ -9,7 +9,6 @@
 				opacity: 0;
 				z-index: -1;
 			}
-			
 			.blur{
 				background-color: black;
 				opacity: 0.4;
@@ -61,33 +60,33 @@ background: transparent ;
 
 ::-webkit-scrollbar-thumb {
 /*border-radius: 100px;*/
-background: #00FF7F ;
+background: #00FF7F ;  
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: #00FF5F;
+background: #00FF5F;  
 }
 html, body{
     overflow-x: hidden !important;
 }
 #stopmotionnew{
     font-size:15px;
-    position:fixed;
+    position:fixed; 
 }
 .slideanim {
     visibility: hidden !important;
 }
 .slide {
     /* The name of the animation */
-
+    
     animation-name: slide;
     -webkit-animation-name: slide;
     /* The duration of the animation */
-
+    
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
     /* Make the element visible */
-
+    
     visibility: visible !important;
 }
 /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
@@ -119,7 +118,7 @@ p {
     position: fixed;
     z-index: 20;
     /*TOEGEVOEGD*/
-
+    
     left: 0px;
     height: 40px;
     margin: 0px;
@@ -160,15 +159,15 @@ li {
     width: 100%;
     height: 52px;
     border-radius: 0;
-
+    
 }
 li a {
     font-size: 30px;
     /*TOEGEVOEGD*/
-
+    
     margin-left: 50px;
     /* EINDE TOEGEVOEGD */
-
+    
     margin-right: 50px;
     height: 50px;
     padding: 0px !important;
@@ -177,7 +176,7 @@ li a {
     font-weight: bold;
     color: gray;
     /*display: inline !important;*/
-
+    
     background-color: white;
     text-align: center;
     text-decoration: none;
@@ -197,7 +196,7 @@ li a {
     position: fixed;
     z-index: 20;
     /*TOEGEVOEGD*/
-
+    
     right: 0px;
     margin: 0px;
     top: 0px;
@@ -250,7 +249,7 @@ ul h15{
     margin: auto;
     font-size: 40px;
     /*text-align: center;*/
-
+    
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     color: black;
@@ -346,14 +345,14 @@ p4 {
     height: 50px;
     border-radius: 6px;
     color: #00FF7F;
-
+    
     opacity: 1 !important;
     font-weight: bold;
     text-shadow: none;
     box-shadow: none;
     background-color: transparent;
     border: 2px solid #00FF7F;
-
+    
 }
 #button1:hover{
     background-color: #00FF7F;
@@ -379,7 +378,7 @@ p1 {
 		width: 80px;
 		height: 40px;
 		text-decoration: none;
-		text-align: center;
+		text-align: center;	
 		color: white;
 		font-size: 20px;
 		cursor: pointer;
@@ -435,7 +434,7 @@ p1 {
 	}
 
 	#footer{
-
+	    
 		width: 100%;
 		height: 30px !important;
 		line-height: 50px;

@@ -1,29 +1,25 @@
 <html>
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://rawgit.com/peachananr/purejs-onepage-scroll/master/onepagescroll.js" ></script>
     <link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" media="all" href="/bower_components/hover/css/component.css" />
-	<link rel="shortcut icon" href="logo site.png" type="image/png">
-    <link href="bower_components/hover/css/hover.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" media="all" href="navs.css" />
-	<link rel="stylesheet" media="all" href="/index.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://rawgit.com/peachananr/purejs-onepage-scroll/master/onepagescroll.js" ></script>
-	<script type="text/javascript" src="//rawgit.com/github/fetch/master/fetch.js"></script>
-	<script type="text/javascript" src="/bower_components/hover/css/classie.js"></script>
-	<script type="text/javascript" src="/bower_components/hover/css/modernizr.custom.js"></script>
-	<script src="http://js.bramvdb.com/jquery.js" ></script>
-	<script src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
-    <script src='https://rawgit.com/yckart/jquery.typer.js/master/jquery.typer.js'></script>
-    <script src="jquery.fullpage.js" ></script>
-    
+    <!--<link rel="stylesheet" media="all" href="/bower_components/hover/css/default.css" />-->
+		<script type="text/javascript" src="//rawgit.com/github/fetch/master/fetch.js"></script>
+		<script type="text/javascript" src="/bower_components/hover/css/classie.js"></script>
+		<script type="text/javascript" src="/bower_components/hover/css/modernizr.custom.js"></script>
+		<script src="http://js.bramvdb.com/jquery.js" ></script>
+    <link rel="stylesheet" media="all" href="/site.css" />
     <title>WVH - Home</title>
-    
+    <link rel="shortcut icon" href="logo site.png" type="image/png">
+    <link href="bower_components/hover/css/hover.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" media="all" href="/hovereffect.css" />
     
 </head>
 <body>
@@ -43,18 +39,24 @@
 
    <div id="fullpage" style="overflow-y: hidden; overflow-x: hidden">
         <div class="achtergrond"></div>
-            <div data-anchor="home" id="home" class="section" >
-                <div class="down">
+        <div data-anchor="home" id="home" class="section" >
+            <div class="down">
                     <a class="scrollto" href="#over"><i class="glyphicon glyphicon-menu-down" id="down"></i></span></a>
-                </div>
-                <div class="inhoud">
-                    <div id="container" >
-                      <p5>Hi! I am Wouter Van Hoof </p5>
-                      </br>&nbsp&nbsp&nbsp&nbsp<p4></p4>I am 15 years old and I like </p4>
-                        <div style="display: inline-block;width: 12em;text-align: left;" id="typer">
-					    </div>
+                    </div>
+            <div class="inhoud">
+               <div id="container" >
+                     <p5>Hi! I am Wouter Van Hoof </p5>
+                    </br>&nbsp&nbsp&nbsp&nbsp<p4></p4>I am 15 years old and I like </p4>
+                    <div style="display: inline-block;width: 12em;text-align: left;" id="typer"></div>
                     
-                        <script>
+                    <script src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+                    <script src='https://rawgit.com/yckart/jquery.typer.js/master/jquery.typer.js'></script>
+                    <script src="jquery.fullpage.js" ></script>
+                    <br>
+                    <!--<input class="btn btn-default" id="button1"type="submit" value="My projects" />-->
+                    <!--<br>-->
+                    
+                    <script>
                         var win = $(window),
                             foo = $('#typer');
                         foo.typer(['making music','mixing music','programming things','making things','light and sound','playing the drums']);
@@ -62,93 +64,92 @@
                         foo.css({
                             "50": 50+"px"
                         })
-                        </script>
+                    </script>
                     
-                    </div>
                 </div>
-            </div>
+                
+                              
+       </div>
+        </div>
         
-            <div data-anchor="over" id="over" class="section" >
-                <div class="over">
-                    </br>
-                    <span class="glyphicon glyphicon-sunglasses logo"></span>
-                    </br>
-                    </br>
-                    <p>Hello, I'm Wouter Van Hoof, I'm 15 years old and I come from Belgium. </br>I'm interested in many things. Basically I love music, technology and computers. </br>I made this site with the intention to join together all my projects. </br>I hope you enjoy my site!</p>
-                    <br>
-                    <!--<a class="scrollto" href="#projecten"><i class="glyphicon glyphicon-menu-down" style="color: white !important;" id="down"></i></span></a>-->
-                </div>
+        <div data-anchor="over" id="over" class="section" >
+            <div class="over">
+                </br>
+                <span class="glyphicon glyphicon-sunglasses logo"></span>
+                </br>
+                </br>
+                <p>Hello, I'm Wouter Van Hoof, I'm 15 years old and I come from Belgium. </br>I'm interested in many things. Basically I love music, technology and computers. </br>I made this site with the intention to join together all my projects. </br>I hope you enjoy my site!</p>
+                <br>
+                <!--<a class="scrollto" href="#projecten"><i class="glyphicon glyphicon-menu-down" style="color: white !important;" id="down"></i></span></a>-->
             </div>
+           
+    </div>
+        <div data-anchor="projecten" id="projecten" style="background-color: #f6f6f6;" class="section"  >
             
-			<div data-anchor="projecten" id="projecten" style="background-color: #f6f6f6;" class="section"  >
-            
-                <div id="blur" class="overlay blur" >
-                </div>
-		        
-				<div id="overlay" class="overlay" >
-		            <iframe id="overlayiframe" style="width: 100%; height: 100%;border: 0px black solid;"></iframe>
-		        </div>
-		        
-				<div class="closeframe" >
-			        <i class="fa fa-times" ></i>
-		        </div>
+            <div id="blur" class="overlay blur" >
+                
+            </div>
+		    <div id="overlay" class="overlay" >
+		          <iframe id="overlayiframe" style="width: 100%; height: 100%;border: 0px black solid;"></iframe>
+		    </div>
+		    <div class="closeframe" >
+			    <i class="fa fa-times" ></i>
+		    </div>
                 
                 <div class="slideanim">
-                    <div class="projecten grid">
-                        <div class="tegels">
-                            <div class="row">
-                                <!--<div class="col-md-4" >-->
-                                <!--<figure class="effect-lily">-->
-                                <!--<img src="http://www.element14.com/community/servlet/JiveServlet/download/38-159801/arduino-uno-transparent-background.png" alt="img01"/>-->
-                                <!--<figcaption>-->
-                                <!--<h2>More  <span>Projects</span>&nbsp<span id="stopmotionnew"class="label label-success"></span></h2>-->
-                                <!--<p>Comming soon</p>-->
-                                <!--</figcaption>-->
-        	                    <!--</figure>-->
-        	                    <!--</div>-->
+                <div class="projecten grid">
+                    <div class="tegels">
+                    <div class="row">
+                     <!--   <div class="col-md-4" >-->
+                     <!--       <figure class="effect-lily">-->
+                     <!--   	    <img src="http://www.element14.com/community/servlet/JiveServlet/download/38-159801/arduino-uno-transparent-background.png" alt="img01"/>-->
+                     <!--   	    <figcaption>-->
+                     <!--   		    <h2>More  <span>Projects</span>&nbsp<span id="stopmotionnew"class="label label-success"></span></h2>-->
+                     <!--   		    <p>Comming soon</p>-->
+                     <!--       	</figcaption>			-->
+        	            <!--   </figure>-->
+        	            <!--</div>-->
         	            
-        	                    <div class="col-md-4" >
-                                    <figure class="effect-lily">
-                        	        <img src="stopmotion.png" alt="img01"/>
-                        	            <figcaption data-href="videos.html">
-                        		            <h2>stop <span>Motion</span>&nbsp<span id="stopmotionnew"class="label label-success">New</span></h2>
-                        		            <p>...if you want to watch all my stop-motion videos!</p>
-                            	        </figcaption>			
-        	                        </figure>
-        	                    </div>
-        	                    
-								<div class="col-md-4" >
-        	                        <a data-href="">
-                                    <figure class="effect-lily">
-                        	        <img src="site.png" alt="img01"/>
-                        	            <figcaption>
-                        		            <h2>WVH <span> website</span>&nbsp<span id="stopmotionnew"class="label label-success"></span></h2>
-                        		            <p>An article about the making of my site...</p>
-                            	        </figcaption>			
-        	                       </figure>
-        	                       </a>
-        	                    </div>
-        	            
-						        <div class="col-md-4" >
-        	                        <p1> More projects will come...</p1>
-        	                    </div>
-        	                </div>
-	                    </div>
-                    </div>
+        	                          <div class="col-md-4" >
+                            <figure class="effect-lily">
+                        	    <img src="stopmotion.png" alt="img01"/>
+                        	    <figcaption data-href="videos.html">
+                        		    <h2>stop <span>Motion</span>&nbsp<span id="stopmotionnew"class="label label-success">New</span></h2>
+                        		    <p>...if you want to watch all my stop-motion videos!</p>
+                            	</figcaption>			
+        	               </figure>
+        	            </div>
+        	               <div class="col-md-4" >
+        	                   <a data-href="">
+                            <figure class="effect-lily">
+                        	    <img src="site.png" alt="img01"/>
+                        	    <figcaption>
+                        		    <h2>WVH <span> website</span>&nbsp<span id="stopmotionnew"class="label label-success"></span></h2>
+                        		    <p>An article about the making of my site...</p>
+                            	</figcaption>			
+        	               </figure>
+        	               </a>
+        	            </div>
+        	            <div class="col-md-4" >
+        	                <p1> More projects will come...</p1>
+        	            </div>
+        	            </div>
+	               </div>
                 </div>
-                <br>
-                <br>
-                    <!--<a class="scrollto" href="#contact"><i class="glyphicon glyphicon-menu-down"  id="down"></i></span></a>-->
             </div>
-                <div data-anchor="contact"  id="contact" class="section" style="background: #2d2d30;">
-                   <div class="container contact" >
-                       <div style="width: 100vw; height: 50px;" ></div>
-                           <h3 class="text-center">Contact</h3>
-                               <div class="row test">
-                                  <div class="col-md-6">
-                                      <div class="contacticons">
-                                          <!--<p12><li><i class="fa fa-map-marker"></i>Mechelen, Belgium</span>-->
-                                          <!--</br><i class="fa fa-envelope"></i>woutervanhoof2000@gmail.com</span>-->
+            <br>
+            <br>
+            <!--<a class="scrollto" href="#contact"><i class="glyphicon glyphicon-menu-down"  id="down"></i></span></a>-->
+        </div>
+        <div data-anchor="contact"  id="contact" class="section" style="background: #2d2d30;">
+            <div class="container contact" >
+              <div style="width: 100vw; height: 50px;" ></div>
+              <h3 class="text-center">Contact</h3>
+              <div class="row test">
+                    <div class="col-md-6">
+                        <div class="contacticons">
+                          <!--<p12><li><i class="fa fa-map-marker"></i>Mechelen, Belgium</span>-->
+                          <!--</br><i class="fa fa-envelope"></i>woutervanhoof2000@gmail.com</span>-->
                          
                           <div class="row" style="text-align: center;padding-right: 15%;" >
                                  &nbsp<a href= "https://www.facebook.com/Tranova-334796293335778/?fref=ts"><i class="fa fa-facebook-square"></i></span></a>
