@@ -273,11 +273,11 @@ p4 {
     background-image: URL("background.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    /*background-size: 100%;*/
-    /*width: auto;*/
+    background-size: 100%;
+    width: auto;
     height: 100%;
     top: 10px;
-    /*position: relative;*/
+    position: relative;
     z-index: -1;
 }
 .over {
