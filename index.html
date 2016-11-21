@@ -1,5 +1,8 @@
 <html>
+    
 <head>
+    <!--http://startbootstrap.com/template-overviews/sb-admin/-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
@@ -9,6 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://rawgit.com/peachananr/purejs-onepage-scroll/master/onepagescroll.js" ></script>
     <link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel="stylesheet" media="all" href="/bower_components/hover/css/component.css" />
     <!--<link rel="stylesheet" media="all" href="/bower_components/hover/css/default.css" />-->
 		<script type="text/javascript" src="//rawgit.com/github/fetch/master/fetch.js"></script>
@@ -17,19 +21,24 @@
 		<script src="http://js.bramvdb.com/jquery.js" ></script>
     <link rel="stylesheet" media="all" href="/site.css" />
     <title>WVH - Home</title>
-    <link rel="shortcut icon" href="logo site.png" type="image/png">
+    <link rel="shortcut icon" href="logo definitief.png" type="image/png">
     <link href="bower_components/hover/css/hover.css" rel="stylesheet" media="all">
     <link rel="stylesheet" media="all" href="/hovereffect.css" />
     
 </head>
 <body>
+
+  <div class="alert alert-info">
+    <strong>Hey! Yeah, you!</strong> &nbsp Still work in progress, but as you can see, my site is starting to get shape!
+  </div>
     <div class="navbar">
         <ul class="navbar_left" id="navbar_left">
             <li class="hvr-underline-reveal"><a href="#home" >Home</a></li>
             <li  class="hvr-underline-reveal"><a href="#over" >About</a></li>
         </ul>
         <ul>
-            <h15>WVH</h15>
+            <img src="logo definitief.png" id="logo">
+
         </ul>
         <ul class="navbar_right" id="navbar_right">
             <li  class="hvr-underline-reveal"><a href="#projecten" >Projects</a></li>
@@ -40,21 +49,20 @@
    <div id="fullpage" style="overflow-y: hidden; overflow-x: hidden">
         <div class="achtergrond"></div>
         <div data-anchor="home" id="home" class="section" >
+            <!--<input class="btn btn-default" id="button1"type="submit" value="My projects" />-->
             <div class="down">
                     <a class="scrollto" href="#over"><i class="glyphicon glyphicon-menu-down" id="down"></i></span></a>
-                    </div>
+            </div>
             <div class="inhoud">
                <div id="container" >
                      <p5>Hi! I am Wouter Van Hoof </p5>
-                    </br>&nbsp&nbsp&nbsp&nbsp<p4></p4>I am 15 years old and I like </p4>
+                    </br>&nbsp&nbsp&nbsp&nbsp<p4></p4>I am 16 years old and I like </p4>
                     <div style="display: inline-block;width: 12em;text-align: left;" id="typer"></div>
                     
                     <script src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
                     <script src='https://rawgit.com/yckart/jquery.typer.js/master/jquery.typer.js'></script>
                     <script src="jquery.fullpage.js" ></script>
                     <br>
-                    <!--<input class="btn btn-default" id="button1"type="submit" value="My projects" />-->
-                    <!--<br>-->
                     
                     <script>
                         var win = $(window),
@@ -74,12 +82,32 @@
         
         <div data-anchor="over" id="over" class="section" >
             <div class="over">
-                </br>
-                <span class="glyphicon glyphicon-sunglasses logo"></span>
-                </br>
-                </br>
-                <p>Hello, I'm Wouter Van Hoof, I'm 15 years old and I come from Belgium. </br>I'm interested in many things. Basically I love music, technology and computers. </br>I made this site with the intention to join together all my projects. </br>I hope you enjoy my site!</p>
-                <br>
+                <div class="col-md-4" >
+                                    <div class="vakje">
+                <span class="glyphicon glyphicon-music"></span>
+                <div class="textje">
+                <p17>"I make my own music, mix music and play the drums. I also play in a band and an orchestra"</p17>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-4" >
+                <div class="vakje">
+                <span class="glyphicon glyphicon-film"></span>
+                <div class="textje">
+                <p17>"I like to film with my friends but I love editing these videos!"</p17>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-4" >
+                                    <div class="vakje">
+                <span class="glyphicon glyphicon-flash"></span>
+                <div class="textje">
+                <p17>"I design and program sites and I love to be creative with <microcontrollers class=""></microcontrollers>"</p17>
+                </div>
+                </div>
+                </div>
+                <!--<p>Hello, I'm Wouter Van Hoof, I'm 15 years old and I come from Belgium. </br>I'm interested in many things. Basically I love music, technology and computers. </br>I made this site with the intention to join together all my projects. </br>I hope you enjoy my site!</p>-->
+                <!--<br>-->
                 <!--<a class="scrollto" href="#projecten"><i class="glyphicon glyphicon-menu-down" style="color: white !important;" id="down"></i></span></a>-->
             </div>
            
@@ -90,7 +118,9 @@
                 
             </div>
 		    <div id="overlay" class="overlay" >
+		        <div id="scherm" class="scherm">
 		          <iframe id="overlayiframe" style="width: 100%; height: 100%;border: 0px black solid;"></iframe>
+		          </div>
 		    </div>
 		    <div class="closeframe" >
 			    <i class="fa fa-times" ></i>
@@ -152,8 +182,8 @@
                           <!--</br><i class="fa fa-envelope"></i>woutervanhoof2000@gmail.com</span>-->
                          
                           <div class="row" style="text-align: center;padding-right: 15%;" >
-                                 &nbsp<a href= "https://www.facebook.com/Tranova-334796293335778/?fref=ts"><i class="fa fa-facebook-square"></i></span></a>
-                                 <a href="https://www.youtube.com/channel/UCE4qB7Ny8yXpJL6ZGndpjrQ"><i class="fa fa-youtube-play"></i></span></a>
+                                 &nbsp<a href= "https://www.facebook.com/woutervhoof?ref=bookmarks"><i class="fa fa-facebook-square"></i></span></a>
+                                 <a href="https://www.youtube.com/channel/UCI1NIV2qWZBnrrmxK5YYfMg"><i class="fa fa-youtube-play"></i></span></a>
                                  <br/> 
                                  <a href="https://soundcloud.com/tranova"><i class="fa fa-soundcloud"></i></span></a>
                                  <a href="https://www.mixcloud.com/tranova/"><i class="fa fa-mixcloud"></i></span></a>
@@ -176,9 +206,11 @@
                                 <textarea class="form-control" id="comments" rows="5" name="message" placeholder="Message"></textarea>
                               </div>
                               <div class="row">
-                               <button class="knop knop-4 knop-4a icon-arrow-right" type="submit" font-size="20px" value="Send">Continue</button>
+                               <button class="fa knop knop-4 knop-4a envelope" type="submit" value="Send">Continue
+                               </button>
                               </div> 
                       	</form>
+                      	<div class="g-recaptcha" data-sitekey="6LdI6R0TAAAAAGBLWpRs2tulMBIqCPuJMXR27Tpa"></div>
  
                     </div>
          
@@ -193,7 +225,7 @@
     </div>
     
     <div  id="share">
-        <h1 style="font-weight: 100; font-size: 20px;">© 2015 Wouter Van Hoof  -  WVH  -  </h1>
+        <h1 style="text-align:center; font-family: 'Amatic SC'; font-weight: 100; font-size: 20px;">© 2015-2016 Wouter Van Hoof  &nbsp&nbsp&nbsp&nbsp - &nbsp&nbsp&nbsp&nbsp  Special thanks to Bramvdb! &nbsp&nbsp&nbsp&nbsp  -  &nbsp&nbsp&nbsp&nbsp Site made by GeekCoding </h1>
         <p></p>
     </div>
 </div>

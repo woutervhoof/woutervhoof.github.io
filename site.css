@@ -1,3 +1,115 @@
+.knop {
+	width:230px;
+	height: 50px;
+	border: none;
+	font-family: inherit;
+	font-size: 20px;
+	font-weight: 900;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 10px 10px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+
+.knop::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.knop-4 {
+	border-radius: 50px;
+	border: 2px solid #fff;
+	color: #fff;
+	overflow: hidden;
+}
+
+.knop-4:active {
+	border-color: #17954c;
+	color: #17954c;
+}
+
+.knop-4:hover {
+	background: #24b662;
+}
+
+.knop-4:before {
+	position: absolute;
+	height: 100%;
+	font-size: 125%;
+	line-height: 3.5;
+	color: #fff;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.knop-4:active:before {
+	color: #17954c;
+}
+
+/* Button 4a */
+.knop-4a:before {
+	left: 130%;
+	top: -20px;
+}
+
+.knop-4a:hover:before {
+	left: 80%;
+	top: -20px;
+}
+
+/* Button 4b */
+.knop-4b:before {
+	left: -50%;
+	top: 0;
+}
+
+.knop-4b:hover:before {
+	left: 10%;
+}
+
+/* Button 4c */
+.knop-4c:before {
+	left: 70%;
+	opacity: 0;
+	top: 0;
+}
+
+.knop-4c:hover:before {
+	left: 80%;
+	opacity: 1;
+}
+
+/* Button 4d */
+.knop-4d:before {
+	left: 30%;
+	opacity: 0;
+	top: 0;
+}
+
+.knop-4d:hover:before {
+	left: 10%;
+	opacity: 1;
+}
+#overlay{
+    border-width: 5px;
+	border-color: #00FF7F;
+	border-style: solid;
+	padding: 10px;
+}
 .overlay{
 				padding: 10px;
 				position: fixed;
@@ -8,6 +120,7 @@
 				background-color: white;
 				opacity: 0;
 				z-index: -1;
+				
 			}
 			.blur{
 				background-color: black;
@@ -31,7 +144,7 @@
 				/*transition: all 1s;*/
 			}
 			.closeframe{
-				background-color: black;
+				background-color: #00FF7F;
 				color: white;
 				position: fixed;
 				top: 1%;
@@ -48,6 +161,9 @@
 				visibility: hidden;
 				z-index: 101;
 			}
+			.closeframe{
+			    background-color:#00FF8F;
+			}
 ::-webkit-scrollbar {
 width: 7px;
 height: 12px;
@@ -60,33 +176,33 @@ background: transparent ;
 
 ::-webkit-scrollbar-thumb {
 /*border-radius: 100px;*/
-background: #00FF7F ;
+background: #00FF7F ;  
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: #00FF5F;
+background: #00FF5F;  
 }
 html, body{
     overflow-x: hidden !important;
 }
 #stopmotionnew{
     font-size:15px;
-    position:fixed;
+    position:fixed; 
 }
 .slideanim {
     visibility: hidden !important;
 }
 .slide {
     /* The name of the animation */
-
+    
     animation-name: slide;
     -webkit-animation-name: slide;
     /* The duration of the animation */
-
+    
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
     /* Make the element visible */
-
+    
     visibility: visible !important;
 }
 /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
@@ -118,7 +234,7 @@ p {
     position: fixed;
     z-index: 20;
     /*TOEGEVOEGD*/
-
+    
     left: 0px;
     height: 40px;
     margin: 0px;
@@ -129,7 +245,7 @@ p {
 }
 .section {
     font-family: 'Raleway', sans-serif;
-    ;
+    
     text-align: center;
     font-weight: bold;
     font-size: 70px;
@@ -151,7 +267,20 @@ li {
     display: inline;
     font-family: 'Raleway', sans-serif;
 }
-
+.alert{
+    position: absolute;
+    top:60px;
+    z-index:19;
+    width: 98%;
+    left: 1%;
+    color: white;
+    background-color: skyblue !important;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+}
 .navbar {
     position: fixed;
     z-index: 20;
@@ -159,15 +288,15 @@ li {
     width: 100%;
     height: 52px;
     border-radius: 0;
-
+    top: 0px; 
 }
 li a {
     font-size: 30px;
     /*TOEGEVOEGD*/
-
+    
     margin-left: 50px;
     /* EINDE TOEGEVOEGD */
-
+    
     margin-right: 50px;
     height: 50px;
     padding: 0px !important;
@@ -176,7 +305,7 @@ li a {
     font-weight: bold;
     color: gray;
     /*display: inline !important;*/
-
+    
     background-color: white;
     text-align: center;
     text-decoration: none;
@@ -196,7 +325,7 @@ li a {
     position: fixed;
     z-index: 20;
     /*TOEGEVOEGD*/
-
+    
     right: 0px;
     margin: 0px;
     top: 0px;
@@ -226,13 +355,13 @@ ul h15{
     transition-duration: 0.4s;
 }
 #down:hover{
-    font-size: 39px;
+    font-size: 38px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 .down{
     position: relative;
-    top: 90%;
+    top: 85%;
     /*z-index: 100;*/
 }
 /*.overlay{*/
@@ -249,7 +378,7 @@ ul h15{
     margin: auto;
     font-size: 40px;
     /*text-align: center;*/
-
+    
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     color: black;
@@ -271,14 +400,21 @@ p4 {
 }
 .inhoud {
     background-image: URL("background.jpg");
-    background-size: contain;
+    background-size: cover !important;
     background-repeat: no-repeat;
-    background-size: 100%;
-    width: auto;
+    width: 100%;
     height: 100%;
-    top: 10px;
-    position: relative;
+    background-position: center;
+    top: 0px;
+    /*position: relative;*/
     z-index: -1;
+}
+#logo{
+    left: 40%;
+    top: 3px;
+    position: relative;
+    width: 10%;
+    height: 90%;
 }
 .over {
     height: 100vh;
@@ -338,26 +474,59 @@ p4 {
     position: relative;
     display: block;
 }
+.glyphicon-music{
+    position: relative;
+    top: 200px;
+}
+.glyphicon-film{
+    position: relative;
+    top: 200px;
+
+}
+.vakje{
+    background-color: #2D2D30;
+    height: 200px;
+    width: 33,333333333333333333333%;
+}
+.textje{
+    font-size: 12px;
+    position: relative;
+    top: 250px;
+}
+p17{
+    font-size: 30px;
+    color: white;
+}
+.glyphicon-flash{
+    position: relative;
+    top: 200px;
+
+    
+}
+
+
 #button1{
     -webkit-transition-duration: 0.6s; /* Safari */
     transition-duration: 0.6s;
     width: 150px;
     height: 50px;
-    border-radius: 6px;
+    border-radius: 20px;
     color: #00FF7F;
-
+    position: relative;
+    top: 600px;
     opacity: 1 !important;
     font-weight: bold;
     text-shadow: none;
     box-shadow: none;
     background-color: transparent;
     border: 2px solid #00FF7F;
-
+    
 }
 #button1:hover{
     background-color: #00FF7F;
-    color: white;
+    color: blue;
 }
+
 p12 {
     font-size: 14px;
     font-family: 'Raleway', sans-serif;
@@ -378,7 +547,7 @@ p1 {
 		width: 80px;
 		height: 40px;
 		text-decoration: none;
-		text-align: center;
+		text-align: center;	
 		color: white;
 		font-size: 20px;
 		cursor: pointer;
@@ -434,7 +603,7 @@ p1 {
 	}
 
 	#footer{
-
+	    
 		width: 100%;
 		height: 30px !important;
 		line-height: 50px;
@@ -476,15 +645,11 @@ user agent stylesheetdiv {
 .contact {} .row test {
     display: inline-block
 }
-/*.col-md-4 {
-    position: relative;
-    float: left;
-    display: inline-block;
-    width: 300px;
-    display: block;
-    text-align: left;
-    left: -150px;
-}*/
+/*.col-md-4 {*/
+/*    margin-left: 10px;*/
+/*    margin-right: 10px;*/
+    
+/*}*/
 .projecten{
     padding-left: 5%;
     padding-right: 5%;
@@ -561,4 +726,8 @@ li {
     position: relative;
     height: 500px;
     top: 140px;
+}
+.envelope::before{
+    font-family: FontAwesome;
+    content: "\f0e0";
 }
