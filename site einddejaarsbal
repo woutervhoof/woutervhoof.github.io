@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<title>test</title>
+		<!-- Materialize CSS -->
+		<style>
+		.tittel{
+			top: 35%;
+			position: relative;
+
+		}
+		p{
+			text-align: center;
+			font-size: 25px;
+		}
+		h1{
+			text-align: center;
+
+		}
+		.form{
+			position: relative;
+		  width: 80%;
+			left: 10% ;
+			top: 30%;
+		}
+		.formulier{
+			background-color: #79706F;
+			position: relative;
+      top: 100%;
+			height:100%;
+		}
+		.submit{
+			border: 2px solid;
+			border-color: white;
+			color: white;
+    border-radius: 25px;
+		width: 100px;
+		height: 35px;
+		background-color: transparent;
+		}
+		.submit:hover{
+			border-color: #26A69A;
+		}
+		.checkbox{
+			color: white;
+			font-size:20px;
+		}
+		.text{
+			position: relative;
+			top: 10%;
+			font-size: 30px;
+			color: white;
+		}
+		.footer p{
+			font-family: 'Pacifico';
+			font-size: 15px;
+			color: white;
+
+		}
+		.footer{
+			position: relative;
+			vertical-align: bottom;
+			bottom: -38%;
+		}
+		body {
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			font-family: 'Pacifico', cursive;
+    background-image: url("http://s32.postimg.org/7i2irkrmt/foto_eindejaarsbal.png");
+}
+		</style>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  		<!-- Compiled and minified CSS -->
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+	 <!-- Compiled and minified JavaScript -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+	</head>
+	<body>
+
+		<div class="tittel">
+		<h1>Eindejaarsbal 2016</h1>
+	</br>
+		<p>Schrijf je nu in!</p>
+	</div>
+
+	<div class="formulier">
+		<p class="text"> Hier uw formulierke invullen en versturen maar!</p>
+		<form action="/iris/test" method="POST" class="form" >
+			<input type="text" name="Name" autofocus="true" placeholder="Naam"/><br/>
+			<br/>
+			<input type="text" name="SecondName" placeholder="Achternaam" /><br/>
+			<br/>
+			<input type="text" name="Email" placeholder="Email"/><br/>
+			<br/>
+			<input type="hidden" value="off" name="Fields.external_guest" />
+			<br/>
+			<label>Buitenschoolse date</label><input type="checkbox" class="checkbox" name="Fields.external_guest" /><br/>
+			<br/>
+			<input type="submit" value="Send" class="submit"/>
+		</form>
+
+	<div class="footer">
+	<p> © 2016   -   WVH (Wouter Van Hoof) & BramVDB (Bram Vandenbogaerde)</p>
+	</div>
+	</div>
+	</body>
+</html>

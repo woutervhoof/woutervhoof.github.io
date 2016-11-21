@@ -1,0 +1,185 @@
+<html>
+	<head>
+		<title>test</title>
+		<!-- Materialize CSS -->
+		<style>
+		.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    /* The duration of the animation */
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible;
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+		.tittel{
+			top: 35%;
+			position: relative;
+
+		}
+		p{
+			text-align: center;
+			font-size: 25px;
+		}
+		h1{
+			text-align: center;
+
+		}
+		.form{
+			position: relative;
+		  width: 80%;
+			left: 10% ;
+			top: 30%;
+		}
+		.formulier{
+			background-color: #79706F;
+			position: relative;
+      top: 100%;
+			height:100%;
+		}
+		.submit{
+			border: 2px solid;
+			border-color: white;
+			color: white;
+    border-radius: 25px;
+		width: 100px;
+		height: 35px;
+		background-color: transparent;
+		}
+		.submit:hover{
+			border-color: #26A69A;
+		}
+		.checkbox{
+			color: white;
+			font-size:20px;
+		}
+		.tekst{
+			position: relative;
+			top: 10%;
+			font-size: 30px;
+			color: white;
+		}
+		.footer p{
+			font-family: 'Amatic SC', cursive;
+			font-size: 15px;
+			color: white;
+
+		}
+		.footer{
+			position: relative;
+			vertical-align: bottom;
+			bottom: -38%;
+		}
+
+		body {
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			font-family: 'Pacifico', cursive !important;
+    background-image: url("http://s32.postimg.org/7i2irkrmt/foto_eindejaarsbal.png");
+}
+.tekentje{
+	top: 66%;
+	position: relative;
+	margin-left: 48%;
+	font-size: 40px;
+}
+		</style>
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  		<!-- Compiled and minified CSS -->
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+	 <!-- Compiled and minified JavaScript -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
+		<script src="vendors/jquery.easings.min.js"></script>
+
+
+		<!-- This following line is only necessary in the case of using the plugin option `scrollOverflow:true` -->
+		<script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+
+		<script type="text/javascript" src="jquery.fullPage.js"></script>
+		<script>
+		$(document).ready(function() {
+    $('#fullpage').fullpage({
+        anchors:['firstPage', 'secondPage']
+    });
+});
+</script>
+	</head>
+		<body>
+<div id="fullpage">
+	<div class="section active" data-anchor="firstPage">
+		<div class="tittel">
+		<h1>Eindejaarsbal 2016</h1>
+	</br>
+		<p>Schrijf je nu in!</p>
+
+	</div>
+
+	<div class="tekentje">
+<a class="glyphicon glyphicon-menu-down" href="#inschrijven" aria-hidden="true"></a>
+	</div>
+</div>
+
+	<div class="section" data-anchor="secondPage">
+
+	<div class="formulier">
+		<p class="tekst"> Hier uw formulierke invullen en versturen maar!</p>
+		<form action="/iris/test" method="POST" class="form" >
+			<input type="text" name="Name" autofocus="true" placeholder="Naam"/><br/>
+			<br/>
+			<input type="text" name="SecondName" placeholder="Achternaam" /><br/>
+			<br/>
+			<input type="text" name="Email" placeholder="Email"/><br/>
+			<br/>
+			<input type="hidden" value="off" name="Fields.external_guest" />
+			<br/>
+			<label>Buitenschoolse date</label><input type="checkbox" class="checkbox" name="Fields.external_guest" /><br/>
+			<br/>
+			<input type="submit" value="Send" class="submit"/>
+		</form>
+
+	<div class="footer">
+	<p> © 2016   -   WVH (Wouter Van Hoof) & BramVDB (Bram Vandenbogaerde)</p>
+	</div>
+
+</div>
+	</body>
+</html>
