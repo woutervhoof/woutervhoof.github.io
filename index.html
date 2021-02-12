@@ -1,34 +1,4 @@
-<?php
-function contactForm($from, $msg){
 
-  $to = 'woutervanhoof2000@gmail.com';
-  $subject = 'Entry contactformulier site';
-
-  $message = '
-    <html>
-    <body>
-      <p>'.$msg.'</p>
-    </body>
-    </html>
-    ';
-
-  // To send HTML mail, the Content-type header must be set
-  $headers[] = 'MIME-Version: 1.0';
-  $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-  $headers[] = 'X-Mailer: PHP/' . phpversion();
-  // Additional headers
-  $headers[] = 'To: '.$to;
-  $headers[] = 'From: '.$from;
-  $headers[] = 'Reply-To: '.$from;
-
-
-  mail($to, $subject, $message, implode("\r\n", $headers));
-}
-if(array_key_exists('verzenden',$_POST)){
-   contactForm($_POST["van"], $_POST["bericht"]);
-   echo "<script>alert('Bericht verzonden!');</script>";
-}
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
