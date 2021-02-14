@@ -59,35 +59,56 @@
        toastList.forEach(toast => toast.show()); // This show them
 
         console.log(toastList); // Testing to see if it works
+    }
+
+      //Form submission
+      var form = document.getElementById("my-form");
+      var button = document.getElementById("verzenden");
+      var status = document.getElementById("my-form-status");
+
+      function success() {
+        form.reset();
+        //button.style = "display: none ";
+        $("#loading").hide();
+        document.getElementById("verzenden").disabled = false;
+        mailConfirm();
       }
 
-      $('form').on('submit', function (e) {
+      function error() {
+        status.innerHTML = "Oops! There was a problem. Please try again.";
+      }
 
-          e.preventDefault();
-          $("#loading").show();
-          document.getElementById("verzenden").disabled = true;
+      form.addEventListener("submit", function(ev) {
+        ev.preventDefault();
+        $("#loading").show();
+        document.getElementById("verzenden").disabled = true;
+        var data = new FormData(form);
+        ajax(form.method, form.action, data, success, error);
+      });
 
-          $.ajax({
-            type: 'post',
-            url: 'https://formspree.io/f/xaylzeyn',
-            data: $('form').serialize(),
-            success: function () {
-              mailConfirm();
-              $( 'form' ).each(function(){
-                this.reset();
-                $("#loading").hide();
-                document.getElementById("verzenden").disabled = false;
-              });
-            }
-          });
 
-        });
 
         $('.navbar-nav>li>a').on('click', function(){
           $('.navbar-collapse').collapse('hide');
         });
 
   });
+
+  function ajax(method, url, data, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+      } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+      }
+    };
+    xhr.send(data);
+  }
+  
   </script>
   <style>
     body, html {
@@ -311,7 +332,7 @@ h2{
   <div class="col w3-animate-bottom contactGegevens">
     <h4>Send me a message!</h4>
   </br>
-  <form method="post">
+  <form method="post" action="https://formspree.io/f/xaylzeyn" id="my-form">
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Your name</label>
       <input required type="text" class="form-control" name="vanNaam" id="exampleFormControlInput1" placeholder="John Doe">
@@ -326,12 +347,13 @@ h2{
   </div>
   <br>
   <div class="d-flex align-items-center">
-        <button type="submit" name="verzenden" id="verzenden" class="btn btn-primary">Send!</button>
+        <button name="verzenden" id="verzenden" class="btn btn-primary">Send!</button>
 
         <div class="spinner-border" id="loading" style="display:none;" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>
+      <p id="my-form-status"></p>
 </form>
 </div>
 </div>
