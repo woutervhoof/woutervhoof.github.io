@@ -90,10 +90,6 @@
         ajax(form.method, form.action, data, success, error);
       });
 
-      function enableBtn(){
-        document.getElementById("verzenden").disabled = false;
-      }
-
         $('.navbar-nav>li>a').on('click', function(){
           $('.navbar-collapse').collapse('hide');
         });
@@ -113,6 +109,10 @@
       }
     };
     xhr.send(data);
+  }
+
+  function enableBtn(){
+    document.getElementById("verzenden").disabled = false;
   }
 
   </script>
