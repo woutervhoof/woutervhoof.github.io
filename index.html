@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <title>Wouter Van Hoof</title>
+  <link rel="icon" href="logoKleur.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -76,7 +77,9 @@
       }
 
       function error() {
-        status.innerHTML = "Oops! There was a problem. Please try again.";
+        $("#loading").hide();
+        document.getElementById("verzenden").disabled = false;
+        status.innerHTML = "<br>Oops! There was a problem. Please try again.";
       }
 
       form.addEventListener("submit", function(ev) {
@@ -87,7 +90,9 @@
         ajax(form.method, form.action, data, success, error);
       });
 
-
+      function enableBtn(){
+        document.getElementById("verzenden").disabled = false;
+      }
 
         $('.navbar-nav>li>a').on('click', function(){
           $('.navbar-collapse').collapse('hide');
@@ -225,6 +230,11 @@ h2{
   border-color:#00DED7 !important;
   margin-right: 10px;
 }
+#verzenden:disabled{
+  background-color:#b5b5b5 !important;
+  border-color:#b5b5b5 !important;
+  margin-right: 10px;
+}
 .contactpag{
   padding-top:100px;
   margin:0px !important;
@@ -346,10 +356,10 @@ h2{
     <label for="exampleFormControlTextarea1" class="form-label">Message</label>
     <textarea required class="form-control" name="bericht" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
-  <div class="g-recaptcha" data-sitekey="6LdI6R0TAAAAAGBLWpRs2tulMBIqCPuJMXR27Tpa"></div>
+  <div class="g-recaptcha" data-callback="enableBtn" data-sitekey="6LdI6R0TAAAAAGBLWpRs2tulMBIqCPuJMXR27Tpa"></div>
   <br>
   <div class="d-flex align-items-center">
-        <button name="verzenden" id="verzenden" class="btn btn-primary">Send!</button>
+        <button name="verzenden" id="verzenden" class="btn btn-primary" disabled="disabled">Send!</button>
 
         <div class="spinner-border" id="loading" style="display:none;" role="status">
           <span class="visually-hidden">Loading...</span>
