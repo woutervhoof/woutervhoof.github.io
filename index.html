@@ -1,396 +1,382 @@
+<!--
 
+
+oooooo   oooooo     oooo oooooo     oooo ooooo   ooooo
+ `888.    `888.     .8'   `888.     .8'  `888'   `888'
+  `888.   .8888.   .8'     `888.   .8'    888     888
+   `888  .8'`888. .8'       `888. .8'     888ooooo888
+    `888.8'  `888.8'         `888.8'      888     888
+     `888'    `888'           `888'       888     888  .o.
+      `8'      `8'             `8'       o888o   o888o Y8P
+
+
+Site made by Wouter Van Hoof
+Belgium, February 2021
+
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Wouter Van Hoof</title>
-  <link rel="icon" href="logoKleur.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script>
-  if (window.location.host.indexOf('github.io') > -1 && window.location.protocol != "https:"){
-    window.location.protocol = "https";
-  }
-  $(document).ready(function() {
+	<title>Wouter Van Hoof</title>
+	<link href="logoKleur.png" rel="icon">
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js">
+	</script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+	<script async defer src="https://www.google.com/recaptcha/api.js">
+	</script>
+	<script>
 
-    $(window).scroll(function navbarchange() {
-      if ($(document).scrollTop() > 50) {
-        $('.navbar').addClass("fixto-fixed");
-        // $('.navbar').addClass("navbar-light");
-        // $('.navbar').removeClass("navbar-dark");
-        document.getElementById("logoNavbar").src = "logoKleurTekstZ.png";
-      } else {
-        $('.navbar').removeClass("fixto-fixed");
-        // $('.navbar').addClass("navbar-dark");
-        // $('.navbar').removeClass("navbar-light");
-        document.getElementById("logoNavbar").src = "logoKleurTekst.png";
-      }
-    });
+	 if (window.location.host.indexOf('github.io') > -1 && window.location.protocol != "https:"){
+	   window.location.protocol = "https";
+	 }
+	 $(document).ready(function() {
 
-    var divId;
+	     $(window).scroll(function navbarchange() {
+	       if ($(document).scrollTop() > 50) {
+	         $('.navbar').addClass("fixto-fixed");
+	         // $('.navbar').addClass("navbar-light");
+	         // $('.navbar').removeClass("navbar-dark");
+	         document.getElementById("logoNavbar").src = "logoKleurTekstZ.png";
+	       } else {
+	         $('.navbar').removeClass("fixto-fixed");
+	         // $('.navbar').addClass("navbar-dark");
+	         // $('.navbar').removeClass("navbar-light");
+	         document.getElementById("logoNavbar").src = "logoKleurTekst.png";
+	       }
+	     });
 
-    $('.nav-link').click(function(){
-      divId = $(this).attr('href');
-      $('html, body').animate({
-        scrollTop: $(divId).offset().top - 54
-      }, 100);
-    });
+	     var divId;
 
-    window.addEventListener('hashchange', function(){
-      history.pushState("", document.title, window.location.pathname
-                                                         + window.location.search);
-});
+	     $('.nav-link').click(function(){
+	       divId = $(this).attr('href');
+	       $('html, body').animate({
+	          scrollTop: $(divId).offset().top - 54
+	       }, 100);
+	     });
 
-    $('.jaar').html((new Date()).getFullYear());
-    calculate_age(new Date(2000, 10, 5));
+	     window.addEventListener('hashchange', function(){
+	       history.pushState("", document.title, window.location.pathname
+	       + window.location.search);
+	     });
 
-    function calculate_age(dob) {
-    var diff_ms = Date.now() - dob.getTime();
-    var age_dt = new Date(diff_ms);
+	     $('.jaar').html((new Date()).getFullYear());
+	     calculate_age(new Date(2000, 10, 5));
 
-    $('.leeftijd').html(Math.abs(age_dt.getUTCFullYear() - 1970));
-    }
+	     function calculate_age(dob) {
+	       var diff_ms = Date.now() - dob.getTime();
+	       var age_dt = new Date(diff_ms);
 
-    function mailConfirm() {
-        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-        var toastList = toastElList.map(function(toastEl) {
-        // Creates an array of toasts (it only initializes them)
-          return new bootstrap.Toast(toastEl) // No need for options; use the default options
-        });
-       toastList.forEach(toast => toast.show()); // This show them
+	       $('.leeftijd').html(Math.abs(age_dt.getUTCFullYear() - 1970));
+	     }
 
-        console.log(toastList); // Testing to see if it works
-    }
+	     function mailConfirm() {
+	       var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+	       var toastList = toastElList.map(function(toastEl) {
+	       // Creates an array of toasts (it only initializes them)
+	           return new bootstrap.Toast(toastEl) // No need for options; use the default options
+	         });
+	       toastList.forEach(toast => toast.show()); // This show them
 
-      //Form submission
-      var form = document.getElementById("my-form");
-      var button = document.getElementById("verzenden");
-      var status = document.getElementById("my-form-status");
+	       console.log(toastList); // Testing to see if it works
+	     }
 
-      function success() {
-        form.reset();
-        //button.style = "display: none ";
-        $("#loading").hide();
-        document.getElementById("verzenden").disabled = false;
-        mailConfirm();
-      }
+	     var form = document.getElementById("my-form");
+	     var button = document.getElementById("verzenden");
+	     var status = document.getElementById("my-form-status");
 
-      function error() {
-        $("#loading").hide();
-        document.getElementById("verzenden").disabled = false;
-        status.innerHTML = "<br>Oops! There was a problem. Please try again.";
-      }
+	     function success() {
+	       form.reset();
+	       $("#loading").hide();
+	       document.getElementById("verzenden").disabled = false;
+	       mailConfirm();
+	     }
 
-      form.addEventListener("submit", function(ev) {
-        ev.preventDefault();
-        $("#loading").show();
-        document.getElementById("verzenden").disabled = true;
-        var data = new FormData(form);
-        ajax(form.method, form.action, data, success, error);
-      });
+	     function error() {
+	       $("#loading").hide();
+	       document.getElementById("verzenden").disabled = false;
+	       status.innerHTML = "<br>Oops! There was a problem. Please try again.";
+	     }
 
-        $('.navbar-nav>li>a').on('click', function(){
-          $('.navbar-collapse').collapse('hide');
-        });
+	     form.addEventListener("submit", function(ev) {
+	       ev.preventDefault();
+	       $("#loading").show();
+	       document.getElementById("verzenden").disabled = true;
+	       var data = new FormData(form);
+	       ajax(form.method, form.action, data, success, error);
+	     });
 
-  });
+	     $('.navbar-nav>li>a').on('click', function(){
+	       $('.navbar-collapse').collapse('hide');
+	     });
 
-  function ajax(method, url, data, success, error) {
-    var xhr = new XMLHttpRequest();
-    xhr.open(method, url);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return;
-      if (xhr.status === 200) {
-        success(xhr.response, xhr.responseType);
-      } else {
-        error(xhr.status, xhr.response, xhr.responseType);
-      }
-    };
-    xhr.send(data);
-  }
+	 });
 
-  function enableBtn(){
-    document.getElementById("verzenden").disabled = false;
-  }
+	 function ajax(method, url, data, success, error) {
+	   var xhr = new XMLHttpRequest();
+	   xhr.open(method, url);
+	   xhr.setRequestHeader("Accept", "application/json");
+	   xhr.onreadystatechange = function() {
+	     if (xhr.readyState !== XMLHttpRequest.DONE) return;
+	     if (xhr.status === 200) {
+	       success(xhr.response, xhr.responseType);
+	     } else {
+	       error(xhr.status, xhr.response, xhr.responseType);
+	     }
+	   };
+	   xhr.send(data);
+	 }
 
-  </script>
-  <style>
-    body, html {
-        height: 100%;
-          margin: 0;
-          font-family: "Open Sans",sans-serif;
-          position:relative;
-    }
+	 function enableBtn(){
+	   document.getElementById("verzenden").disabled = false;
+	 }
 
-    .bg {
-      /* The image used */
-      background-image: url("background.jpg");
+	</script>
+	<style>
 
-      /* Full height */
-      height: 100%;
+	body, html {
+	   height: 100%;
+	   margin: 0;
+     font-family: "Open Sans",sans-serif;
+	   position:relative;
+	}
+	.bg {
+	   background-image: url("background.jpg");
+	   height: 100%;
+	   background-position: center;
+	   background-repeat: no-repeat;
+	   background-size: cover;
+	}
+	.logo {
+	   text-align: right;
+	}
+	.logo img {
+	   width:30%;
+	}
+	.intro{
+	   position: absolute;
+	   left: 0;
+	   top: 38%;
+	   width: 100%;
+	   text-align: center;
+	   color: white;
+	   margin:0px;
+	}
+	.introText{
+	   margin: auto;
+	}
+	.navbar-toggler{
+	   color:white!important;
+	}
+  .navbar {
+	   margin-bottom: 0;
+	   border-radius: 0;
+	   padding-left: 3%;
+	   padding-right:3%;
+	   font-weight: 600;
+	   font-size:14px;
+	   text-transform: uppercase;
+	}
+	.navbarlogo img {
+	   height : 100%;
+	}
+	.navbar-trans {
+	   background-color: transparent;
+	}
+	.nav-link{
+	   color:white!important;
+	}
+	.nav-link:hover{
+	   border-bottom: 3px solid #00DED7;
+	}
+	.active{
+	   border-bottom: 3px solid #00DED7;
+	}
+	.nav-item{
+	   border-bottom: 3px solid transparent;
+	   padding-left: .85rem;
+	   padding-right: .85rem;
+	   text-align:right;
+	}
+	.talen img{
+	   width:70px;
+	}
+	.fixto-fixed {
+	   transform: translateZ(0);
+	   background-color: #FFF;
+	   box-shadow: 0 0 5px 2px rgb(0 0 0 / 33%);
+	}
+	.fixto-fixed a{
+	   color:black!important;
+	}
+	.contactGegevens {
+	   background-color: white;
+	   padding: 10px;
+	   padding-top: 5px;
+	   border-top: solid #00DED7 0.3em !important;
+	   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+	   margin: 0.01em 16px;
+	   margin-top:20px!important;
+	   margin-bottom: 1.5em!important;
+	   text-align:left;
+	   max-width:600px !important;
+	   margin: auto;
+	}
+	h4{
+	   font-weight:400;
+	   margin: 10px 0;
+	}
+	h2{
+	   font-weight: 600;
+	   text-transform: uppercase;
+	}
+	#verzenden{
+	   background-color:#00DED7 !important;
+	   border-color:#00DED7 !important;
+	   margin-right: 10px;
+	}
+	#verzenden:disabled{
+	   background-color:#b5b5b5 !important;
+	   border-color:#b5b5b5 !important;
+	   margin-right: 10px;
+	}
+	.contactpag{
+	   padding-top:100px;
+	   margin:0px !important;
+	   padding-bottom:100px!important;
+	}
+	.contactpag h2{
+	   text-align:left;
+	   margin:auto;
+	   max-width: 600px;
+	}
+	.tekst{
+	   max-width:600px;
+	   margin:auto;
+	   text-align:justify;
+	}
+	.about h2{
+	   max-width:600px;
+	   text-align:left;
+	   margin:auto;
+	}
+	.about{
+	   padding-top:100px!important;
+	   padding-bottom:100px!important;
+	   padding:50px;
+	   margin:0px !important;
+	}
+	#loading{
+	   color:#00DED7;
+	}
+	.navbar-toggler{
+	   background-color:white;
+	}
 
-      /* Center and scale the image nicely */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+	@media only screen and (max-width: 767px) {
+     .logo{
+	      text-align:center!important;
+     }
+     .introText{
+	      text-align:center!important;
+	   }
+	   .intro{
+	      top:35%;
+	   }
+	   .nav{
+	      max-width:30%;
+	   }
+	}
 
-    .logo {
-  text-align: right;
-}
-.logo img {
-  width:30%;
-}
+  footer {
+	   background-color: #f2f2f2;
+	   padding: 25px;
+	}
 
-    .intro{
-      position: absolute;
-    left: 0;
-    top: 38%;
-    width: 100%;
-    text-align: center;
-    color: white;
-    margin:0px;
-    }
-    .introText{
-      margin: auto;
-    }
-    .navbar-toggler{
-      color:white!important;
-    }
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      padding-left: 3%;
-      padding-right:3%;
-      font-weight: 600;
-      font-size:14px;
-      text-transform: uppercase;
-    }
-    .navbarlogo img {
-    height : 100%;
-    }
-    .navbar-trans {
-  background-color: transparent;
-  }
-.nav-link{
-  color:white!important;
-}
-.nav-link:hover{
-  border-bottom: 3px solid #00DED7;
-}
-.active{
-  border-bottom: 3px solid #00DED7;
-}
-.nav-item{
-  border-bottom: 3px solid transparent;
-  padding-left: .85rem;
-  padding-right: .85rem;
-  text-align:right;
-}
-.talen img{
-  width:70px;
-}
-.fixto-fixed {
-    transform: translateZ(0);
-    background-color: #FFF;
-    box-shadow: 0 0 5px 2px rgb(0 0 0 / 33%);
-
-  }
-  .fixto-fixed a{
-    color:black!important;
-  }
-
-  .contactGegevens {
-    background-color: white;
-    padding: 10px;
-    padding-top: 5px;
-    border-top: solid #00DED7 0.3em !important;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    /* border: 1px solid #e0e1e1; */
-    margin: 0.01em 16px;
-    margin-top:20px!important;
-    margin-bottom: 1.5em!important;
-    text-align:left;
-    max-width:600px !important;
-    margin: auto;
-}
-h4{
-  font-weight:400;
-  margin: 10px 0;
-}
-h2{
-  font-weight: 600;
-  text-transform: uppercase;
-}
-#verzenden{
-  background-color:#00DED7 !important;
-  border-color:#00DED7 !important;
-  margin-right: 10px;
-}
-#verzenden:disabled{
-  background-color:#b5b5b5 !important;
-  border-color:#b5b5b5 !important;
-  margin-right: 10px;
-}
-.contactpag{
-  padding-top:100px;
-  margin:0px !important;
-  padding-bottom:100px!important;
-}
-.contactpag h2{
-  text-align:left;
-  margin:auto;
-  max-width: 600px;
-}
-.tekst{
-  max-width:600px;
-  margin:auto;
-  text-align:justify;
-}
-.about h2{
-  max-width:600px;
-  text-align:left;
-  margin:auto;
-}
-.about{
-  padding-top:100px!important;
-  padding-bottom:100px!important;
-  padding:50px;
-  margin:0px !important;
-}
-#loading{
-  color:#00DED7;
-}
-
-.navbar-toggler{
-  background-color:white;
-}
-@media only screen and (max-width: 767px) {
-  .logo{
-    text-align:center!important;
-  }
-  .introText{
-    text-align:center!important;
-  }
-  .intro{
-    top:35%;
-  }
-  .nav{
-    max-width:30%;
-  }
-}
-
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-  </style>
+	</style>
 </head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
-<nav class="navbar navbar-expand-lg fixed-top navbar-light navbar-trans animate__animated animate__fadeIn">
-  <div class="container-fluid">
-    <a class="navbar-brand navbarlogo" href="#home"><img id="logoNavbar" src="logoKleurTekst.png" width="70" class="d-inline-block align-top"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link home active" aria-current="page" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
-
-    </div>
-  </div>
-</nav>
-
-<div class="bg" id="home">
-  <div class="row intro text-center animate__animated animate__zoomIn">
-    <div class="col-md-5">
-      <div class="logo"><img src="logoKleur.png" ></div>
-    </div>
-    <div class="col-md-7 introText" style="text-align:left;">
-      <br>
-      <h1>Wouter Van Hoof</h1>
-      <p>Tech enthousiast and tinkerer</p>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid bg-3 text-center about" id="about" style="background-color:#F5F5F5;">
-  <h2>About</h2>
-  <div class="tekst">
-    <br>
-    <p>I'm a <span class="leeftijd"></span> year old student electronics-ict from Belgium. In my free time, I like
-     playing music, being a scout leader and to tinker with electronics or software. I can program in C, java and assembly.
-     I also enjoy making websites in PHP, html, css and javascript.
-   </p>
-  </div>
-
-</div>
-
-<div class="container-fluid bg-3 text-center contactpag" id="contact" >
-  <h2>Contact</h2>
-  <div class="col w3-animate-bottom contactGegevens">
-    <h4>Send me a message!</h4>
-  </br>
-  <form method="post" action="https://formspree.io/f/xaylzeyn" id="my-form">
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Your name</label>
-      <input required type="text" class="form-control" name="vanNaam" id="exampleFormControlInput1" placeholder="John Doe">
-    </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Your email adress</label>
-    <input required type="email" class="form-control" name="_replyto" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-    <textarea required class="form-control" name="bericht" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <div class="g-recaptcha" data-callback="enableBtn" data-sitekey="6LdI6R0TAAAAAGBLWpRs2tulMBIqCPuJMXR27Tpa"></div>
-  <br>
-  <div class="d-flex align-items-center">
-        <button name="verzenden" id="verzenden" class="btn btn-primary" disabled="disabled">Send!</button>
-
-        <div class="spinner-border" id="loading" style="display:none;" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
-      <p id="my-form-status"></p>
-</form>
-</div>
-</div>
-
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
-  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <svg class="bd-placeholder-img rounded me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#00DED7"></rect></svg>
-      <strong class="me-auto">Wouter Van Hoof</strong>
-      <small>just now</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      Message sent successfully!
-    </div>
-  </div>
-</div>
-
-<footer class="container-fluid text-center">
-  <p>&copy<span class="jaar"></span> Wouter Van Hoof</p>
-</footer>
-
+<body data-bs-offset="100" data-bs-spy="scroll" data-bs-target=".navbar">
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light navbar-trans animate__animated animate__fadeIn">
+		<div class="container-fluid">
+			<a class="navbar-brand navbarlogo" href="#home"><img class="d-inline-block align-top" id="logoNavbar" src="logoKleurTekst.png" width="70"></a> <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#myNavbar" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link home active" href="#home">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="bg" id="home">
+		<div class="row intro text-center animate__animated animate__zoomIn">
+			<div class="col-md-5">
+				<div class="logo"><img src="logoKleur.png"></div>
+			</div>
+			<div class="col-md-7 introText" style="text-align:left;">
+				<br>
+				<h1>Wouter Van Hoof</h1>
+				<p>Tech enthousiast and tinkerer</p>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-3 text-center about" id="about" style="background-color:#F5F5F5;">
+		<h2>About</h2>
+		<div class="tekst">
+			<br>
+			<p>I'm a <span class="leeftijd"></span> year old student electronics-ict from Belgium. In my free time, I like playing music, being a scout leader and to tinker with electronics or software. I can program in C, java and assembly. I also enjoy making websites in PHP, html, css and javascript.</p>
+		</div>
+	</div>
+	<div class="container-fluid bg-3 text-center contactpag" id="contact">
+		<h2>Contact</h2>
+		<div class="col w3-animate-bottom contactGegevens">
+			<h4>Send me a message!</h4><br>
+			<form action="https://formspree.io/f/xaylzeyn" id="my-form" method="post" name="my-form">
+				<div class="mb-3">
+					<label class="form-label" for="exampleFormControlInput1">Your name</label> <input autocomplete="name" class="form-control" id="exampleFormControlInput1" name="name" placeholder="John Doe" required="" type="text">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="exampleFormControlInput1">Your email adress</label> <input autocomplete="email" class="form-control" id="exampleFormControlInput1" name="_replyto" placeholder="name@example.com" required="" type="email">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="exampleFormControlTextarea1">Message</label>
+					<textarea class="form-control" id="exampleFormControlTextarea1" name="bericht" required="" rows="3"></textarea>
+				</div>
+				<div class="g-recaptcha" data-callback="enableBtn" data-sitekey="6LdI6R0TAAAAAGBLWpRs2tulMBIqCPuJMXR27Tpa"></div><br>
+				<div class="d-flex align-items-center">
+					<button class="btn btn-primary" disabled="disabled" id="verzenden" name="verzenden">Send!</button>
+					<div class="spinner-border" id="loading" role="status" style="display:none;">
+						<span class="visually-hidden">Loading...</span>
+					</div>
+				</div>
+				<p id="my-form-status"></p>
+			</form>
+		</div>
+	</div>
+	<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+		<div aria-atomic="true" aria-live="assertive" class="toast hide" id="liveToast" role="alert">
+			<div class="toast-header">
+				<svg aria-hidden="true" class="bd-placeholder-img rounded me-2" height="20" preserveaspectratio="xMidYMid slice" width="20" xmlns="http://www.w3.org/2000/svg">
+				<rect fill="#00DED7" height="100%" width="100%"></rect></svg> <strong class="me-auto">Wouter Van Hoof</strong> <small>just now</small> <button aria-label="Close" class="btn-close" data-bs-dismiss="toast" type="button"></button>
+			</div>
+			<div class="toast-body">
+				Message sent successfully!
+			</div>
+		</div>
+	</div>
+	<footer class="container-fluid text-center">
+		<p>&copy;<span class="jaar"></span> Wouter Van Hoof</p>
+	</footer>
 </body>
 </html>
